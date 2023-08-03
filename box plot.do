@@ -40,7 +40,7 @@ forvalues i=1(1)20{
 	replace index2=0 if index2==.
 	
 	gen y=0.1*z1*z2+1.2*z1+0.6*z2+e+z3*2+10+20*treat*index2
-save "DID_simu_data1.dta", replace  //保存一份数据以备后用
+save "DID_simu_data1.dta", replace  /// save the data
 gen y10=log(y)
 #d ;
 graph hbox y10,   /// 
@@ -51,6 +51,6 @@ graph hbox y10,   ///
   note("Source:DID_simu_data1", span) ;
 #d cr 
 
-//保存图片
+///
 graph export "F6_box_plot.png", ///
       replace width(431) height(394)
